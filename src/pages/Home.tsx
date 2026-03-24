@@ -5,35 +5,96 @@ import { FileText, File, Play, X } from 'lucide-react';
 const mockData = [
   {
     id: 1,
-    title: '期末專題：AI 繪圖成果與心得',
-    author: '王小明',
+    title: '自主學習作品：蔡芷柔',
+    author: '蔡芷柔',
     type: 'youtube',
-    url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
-    description: '這是我這學期學習 AI 繪圖 (Midjourney) 的心得記錄與操作展示影片。我發現詠唱關鍵字非常需要想像力。'
-  },
-  {
-    id: 4,
-    title: '創意機器人大賽實錄',
-    author: '張大山',
-    type: 'youtube',
-    url: 'https://www.youtube.com/embed/jNQXAC9IVRw',
-    thumbnail: 'https://img.youtube.com/vi/jNQXAC9IVRw/maxresdefault.jpg',
-    description: '參與跨校機器人大賽的精華片段與我們隊伍的致勝關鍵。'
+    url: 'https://www.youtube.com/embed/Jc7vIIAE0QY',
+    thumbnail: 'https://img.youtube.com/vi/Jc7vIIAE0QY/maxresdefault.jpg',
+    description: ''
   },
   {
     id: 2,
-    title: '自然科學探究報告：校園植物',
-    author: '李小華',
-    type: 'pdf',
-    description: '觀察校園植物生長歷程與資料分析，記錄了三十天的植物成長對比。'
+    title: '自主學習作品：王晨佑',
+    author: '王晨佑',
+    type: 'youtube',
+    url: 'https://www.youtube.com/embed/4ecV8HiXgv0',
+    thumbnail: 'https://img.youtube.com/vi/4ecV8HiXgv0/maxresdefault.jpg',
+    description: ''
   },
   {
     id: 3,
-    title: '寒假經典閱讀心得分享',
-    author: '陳大文',
-    type: 'text',
-    description: '這本書讓我學到了很多關於人生規劃的重要觀念，尤其是在面對挫折時的心態調整...'
+    title: '自主學習作品：陳韋豪',
+    author: '陳韋豪',
+    type: 'youtube',
+    url: 'https://www.youtube.com/embed/yaGB5BItwbY',
+    thumbnail: 'https://img.youtube.com/vi/yaGB5BItwbY/maxresdefault.jpg',
+    description: ''
+  },
+  {
+    id: 4,
+    title: '自主學習作品：王晨希',
+    author: '王晨希',
+    type: 'youtube',
+    url: 'https://www.youtube.com/embed/nvxBSqrd2Rw',
+    thumbnail: 'https://img.youtube.com/vi/nvxBSqrd2Rw/maxresdefault.jpg',
+    description: ''
+  },
+  {
+    id: 5,
+    title: '自主學習作品：徐維蔓',
+    author: '徐維蔓',
+    type: 'youtube',
+    url: 'https://www.youtube.com/embed/kH4mA3XPJNE',
+    thumbnail: 'https://img.youtube.com/vi/kH4mA3XPJNE/maxresdefault.jpg',
+    description: ''
+  },
+  {
+    id: 6,
+    title: '一起玩彈珠 508 31 謝棋芝的寒假作業',
+    author: '謝棋芝',
+    type: 'pdf',
+    url: 'https://drive.google.com/file/d/17Q3hswK9aCucooAsxGwLsvFvTpXfhnmy/preview',
+    description: ''
+  },
+  {
+    id: 7,
+    title: '自製洋芋片',
+    author: '王沂安',
+    type: 'pdf',
+    url: 'https://drive.google.com/file/d/16WuDowQyYpsRk3Qbt5NvyDqVJLgmHG9L/preview',
+    description: ''
+  },
+  {
+    id: 8,
+    title: '幫助自己寫字更美觀',
+    author: '張人杰',
+    type: 'pdf',
+    url: 'https://drive.google.com/file/d/1IRESRPAj0do0FjJEWs9UcNkY7kOXGamC/preview',
+    description: ''
+  },
+  {
+    id: 9,
+    title: '寒假自主學習成果展作品',
+    author: '許睿旂',
+    type: 'pdf',
+    url: 'https://drive.google.com/file/d/1cM1zcm5Jo-d2IpAL4on8EwuK0figzNF2/preview',
+    description: ''
+  },
+  {
+    id: 10,
+    title: '50804 寒假作業成果',
+    author: '04號學生',
+    type: 'pdf',
+    url: 'https://drive.google.com/file/d/17Hy0x18ihbFmTrWRzxRwycQ4tljfY4cc/preview',
+    description: ''
+  },
+  {
+    id: 11,
+    title: 'Roblox 創意作品',
+    author: 'Harry',
+    type: 'pdf',
+    url: 'https://drive.google.com/file/d/1shxMYmXA-zKSd2Ua88OBqhjmWtgjMobP/preview',
+    description: ''
   }
 ];
 
@@ -95,10 +156,10 @@ function ItemModal({ item, onClose }: { item: any; onClose: () => void }) {
         </div>
 
         <div style={{ flex: 1, overflow: 'hidden', backgroundColor: '#000', display: 'flex', flexDirection: 'column' }}>
-          {item.type === 'youtube' && (
-            <iframe width="100%" height="100%" src={`${item.url}?autoplay=1`} title={item.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ flex: 1 }}></iframe>
+          {(item.type === 'youtube' || (item.type === 'pdf' && item.url)) && (
+            <iframe width="100%" height="100%" src={item.url.includes('youtube.com') ? `${item.url}?autoplay=1` : item.url} title={item.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ flex: 1 }}></iframe>
           )}
-          {item.type === 'pdf' && (
+          {item.type === 'pdf' && !item.url && (
             <div style={{ flex: 1, backgroundColor: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)' }}>
               <FileText size={80} color="#be185d" style={{ marginBottom: '1rem' }} />
               <p style={{ fontSize: '1.2rem' }}>文件檢視器載入中...</p>
