@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { FileText, File, Play, X } from 'lucide-react';
+import { FileText, Play, X } from 'lucide-react';
 
 const mockData = [
   { id: 1, title: '蔡芷柔', author: '蔡芷柔', type: 'youtube', url: 'https://www.youtube.com/embed/Jc7vIIAE0QY', thumbnail: 'https://img.youtube.com/vi/Jc7vIIAE0QY/maxresdefault.jpg' },
