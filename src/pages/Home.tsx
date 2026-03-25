@@ -82,18 +82,19 @@ function ItemModal({ item, onClose }: { item: any; onClose: () => void }) {
       onClick={onClose}
     >
       <div
-        style={{ height: '94vh', width: '95vw', maxWidth: '1400px', backgroundColor: 'var(--surface)', borderRadius: '12px', overflow: 'hidden', display: 'flex', flexDirection: 'column', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)' }}
+        style={{ height: '100vh', width: '100vw', backgroundColor: '#000', overflow: 'hidden', display: 'flex', flexDirection: 'column', position: 'relative' }}
         onClick={e => e.stopPropagation()}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.6rem 1.25rem', borderBottom: '1px solid var(--border)', backgroundColor: '#f8fafc', flexShrink: 0 }}>
-          <div>
-            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-main)' }}>{item.author} 的作品</h2>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.25rem' }}>點擊視窗外背景即可關閉</p>
-          </div>
-          <button onClick={onClose} style={{ padding: '0.5rem', backgroundColor: '#f1f5f9', borderRadius: '50%', color: 'var(--text-muted)' }}>
-            <X size={24} />
-          </button>
-        </div>
+        {/* Floating Close Button */}
+        <button 
+          onClick={onClose} 
+          style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', zIndex: 100, padding: '0.6rem', backgroundColor: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '50%', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background 0.2s' }}
+          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.4)'}
+          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)'}
+          title="關閉預覽 (或按 Esc)"
+        >
+          <X size={28} />
+        </button>
 
         <div style={{ flex: 1, overflow: 'hidden', backgroundColor: '#000', display: 'flex', flexDirection: 'column' }}>
           {(item.type === 'youtube' || item.type === 'video' || (item.type === 'pdf' && item.url)) && (
