@@ -173,11 +173,9 @@ function ImageCarousel({ images }: { images: string[] }) {
 function ResultCard({ item, onClick }: { item: any, onClick: () => void }) {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Minimal mobile detection to bypass iframe issues on phones
+  // Presentations and Drive videos now always open in a new tab to ensure animations play correctly
   const handleCardClick = () => {
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
-    
-    if (isMobile && (item.type === 'pdf' || item.type === 'video')) {
+    if (item.type === 'pdf' || item.type === 'video') {
       window.open(item.url, '_blank');
     } else {
       onClick();
