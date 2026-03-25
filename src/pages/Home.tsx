@@ -173,10 +173,21 @@ function ImageCarousel({ images }: { images: string[] }) {
 function ResultCard({ item, onClick }: { item: any, onClick: () => void }) {
   const [isHovered, setIsHovered] = useState(false);
 
+  // Minimal mobile detection to bypass iframe issues on phones
+  const handleCardClick = () => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
+    
+    if (isMobile && (item.type === 'pdf' || item.type === 'video')) {
+      window.open(item.url, '_blank');
+    } else {
+      onClick();
+    }
+  };
+
   return (
     <div 
       className="glass-panel"
-      onClick={onClick}
+      onClick={handleCardClick}
       style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden', transition: 'transform 0.3s ease, box-shadow 0.3s ease', transform: isHovered ? 'translateY(-8px)' : 'none', boxShadow: isHovered ? 'var(--shadow-lg)' : 'var(--shadow-md)', cursor: 'pointer', backgroundColor: 'var(--surface)', border: '1px solid var(--border)' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
