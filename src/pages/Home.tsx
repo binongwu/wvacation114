@@ -34,6 +34,7 @@ const mockData = [
       '1KYA1h13uYS39iqMnznrxuvS-JqrS1Jeh', '1j3CZ-PbQ7D1ZsHYxQBoz0dNXLiu0P4Od'
     ]
   },
+  { id: 18, title: '邱柏鈞', author: '邱柏鈞', type: 'video', url: 'https://drive.google.com/file/d/1EQ5WW9IsLPIgc69biLTZ1ZN7uVi-U6Nu/preview', thumbnail: '/thumbnails/qiu_bo_jun.png' },
 ];
 
 export default function Home() {
