@@ -38,38 +38,11 @@ const mockData = [
 
 export default function Home() {
   const [selectedItem, setSelectedItem] = useState<any | null>(null);
-  const [activeProjectName, setActiveProjectName] = useState<string | null>(null);
 
-  const handleOpenProject = (item: any) => {
-    if (item.type === 'pdf' || item.type === 'video') {
-      setActiveProjectName(item.author);
-      window.open(item.url, '_blank');
-    } else {
-      setSelectedItem(item);
-    }
-  };
 
   return (
     <div className="animate-fade-in" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
-      {/* 行動端與簡報播放提示條 */}
-      {activeProjectName && (
-        <div style={{ position: 'sticky', top: '1rem', left: '50%', transform: 'translateX(-50%)', zIndex: 1000, width: '90%', maxWidth: '600px', backgroundColor: 'var(--text-main)', color: '#fff', padding: '0.75rem 1.5rem', borderRadius: '50px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', boxShadow: '0 10px 25px rgba(0,0,0,0.3)', marginBottom: '2rem', animation: 'slideDown 0.3s ease-out' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <div style={{ width: '8px', height: '8px', backgroundColor: '#ef4444', borderRadius: '50%', boxShadow: '0 0 10px #ef4444' }}></div>
-            <span style={{ fontSize: '0.9rem', fontWeight: 500 }}>正在新視窗觀看 {activeProjectName} 的簡報內容</span>
-          </div>
-          <button 
-            onClick={() => setActiveProjectName(null)}
-            style={{ backgroundColor: 'rgba(255,255,255,0.2)', border: 'none', color: '#fff', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '0.75rem', cursor: 'pointer', transition: 'background 0.2s' }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.3)'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)'}
-          >
-            關閉提示
-          </button>
-        </div>
-      )}
-
-      <header style={{ textAlign: 'center', marginBottom: '4rem', marginTop: activeProjectName ? '1rem' : '2rem' }}>
+      <header style={{ textAlign: 'center', marginBottom: '4rem', marginTop: '2rem' }}>
         <div style={{ display: 'inline-block', padding: '0.25rem 1rem', background: '#e0e7ff', color: 'var(--primary)', borderRadius: '20px', fontWeight: 600, fontSize: '0.875rem', marginBottom: '1rem' }}>
           五零八班專屬
         </div>
@@ -83,7 +56,7 @@ export default function Home() {
       
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2rem' }}>
         {mockData.map((item) => (
-          <ResultCard key={item.id} item={item} onClick={() => handleOpenProject(item)} />
+          <ResultCard key={item.id} item={item} onClick={() => setSelectedItem(item)} />
         ))}
       </div>
 
