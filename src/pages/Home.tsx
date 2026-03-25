@@ -50,9 +50,6 @@ export default function Home() {
         <h1 style={{ fontSize: '3rem', fontWeight: '800', color: 'var(--text-main)', marginBottom: '1rem', letterSpacing: '-0.02em' }}>
           508寒假自主學習成果展
         </h1>
-        <p style={{ fontSize: '1.25rem', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }}>
-          探索同學們在寒假期間精彩豐富的自主學習專案與紀錄。
-        </p>
       </header>
       
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '2rem' }}>
