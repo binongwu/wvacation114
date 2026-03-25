@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { FileText, Play, X } from 'lucide-react';
+import { FileText, Play, X, Image, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const mockData = [
   { id: 1, title: '蔡芷柔', author: '蔡芷柔', type: 'youtube', url: 'https://www.youtube.com/embed/Jc7vIIAE0QY', thumbnail: 'https://img.youtube.com/vi/Jc7vIIAE0QY/maxresdefault.jpg' },
@@ -18,7 +18,21 @@ const mockData = [
   { id: 13, title: '吳翊恩', author: '吳翊恩', type: 'pdf', url: 'https://drive.google.com/file/d/1i-69BuwcU5oJ9I-O0NY6_DZJejzBLyNU/preview', thumbnail: '/thumbnails/wu_yi_en.png' },
   { id: 14, title: '謝雅芝', author: '謝雅芝', type: 'pdf', url: 'https://drive.google.com/file/d/1Kzem1BXWtvnut-NStnt_7pimFCQuH7pd/preview', thumbnail: '/thumbnails/xie_ya_zhi.png' },
   { id: 15, title: '范芝綾', author: '范芝綾', type: 'video', url: 'https://drive.google.com/file/d/1cGltoqLbk0HT4qL3F0SL5awb90JMUKVl/preview', thumbnail: '/thumbnails/fan_zhiling.png' },
-  { id: 16, title: '張芸榕', author: '張芸榕', type: 'pdf', url: 'https://drive.google.com/embeddedfolderview?id=12ncqtAM2VCBEriVbqqdFIYLjAbM4FbcE#grid', thumbnail: '/thumbnails/zhang_yun_rong.png' },
+  { 
+    id: 16, 
+    title: '張芸榕', 
+    author: '張芸榕', 
+    type: 'images', 
+    thumbnail: '/thumbnails/zhang_yun_rong.png',
+    images: [
+      '1_vLPRmnCZiitQdo_qo5D2WSEWx6aSr9q', '14s_cHljOmJ_UY-iRTZXKKBZvDuI1jMAv', '1raJ63Av2SxQ4TPs5eaz524Kxv1zODz3l', '1SVcgokoRmwP8XXAJ7TppQ-wEwI9sw8hf',
+      '1RMNqHa1KlWWCe8NRYVs7nPwQRzMt0DeI', '1TJFr3Wfp4Q2Tws3wrjUug4cPL5VDQXb2', '1H8TnV3eNuuESEkjXurWrfVugIzlPmXca', '1vigSGCFMDUshvaQcNUb-XpOk5Wb33PXl',
+      '1i9wCGT3wdMauuaSl7kXvllNgQpiria6l', '1FEk6KayKLWgwxBwzGMtWTd96WjuI4V5E', '1eOTDonLv7GEyMoovo86LJ7NMAguUPi_t', '1IXHacjkVoyFzAPuRR57T-7apAbfzqJ5P',
+      '1WxU-v02b4PPxjXSSd2AXfghAm9KK6kzc', '1bHilY20HsN0z4m0LnI5WZYK30Y6MhT7B', '1tppyobOyo_V732kAGyWThub1lQiR0lac', '1lxKs-ctqnmf56yuESm8rSTOvGwxNa3LY',
+      '1Xb3iP2vjpLWKvEJU1LAcwf-OliOFuJRK', '1nXquFfzSezIfRFMHrEIqwAafMrOJzzpn', '1qU7mGYKJ0sGdqDmgXvyW7y_KYMH3a0Kg', '1TpsYIQOiFuEXBDoAqSDKl8YPiEvI1t6P',
+      '1KYA1h13uYS39iqMnznrxuvS-JqrS1Jeh', '1j3CZ-PbQ7D1ZsHYxQBoz0dNXLiu0P4Od'
+    ]
+  },
 ];
 
 export default function Home() {
@@ -82,6 +96,7 @@ function ItemModal({ item, onClose }: { item: any; onClose: () => void }) {
           {(item.type === 'youtube' || item.type === 'video' || (item.type === 'pdf' && item.url)) && (
             <iframe width="100%" height="100%" src={item.type === 'youtube' ? `${item.url}?autoplay=1` : item.url} title={item.author} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ flex: 1 }}></iframe>
           )}
+          {item.type === 'images' && <ImageCarousel images={item.images} />}
           {item.type === 'pdf' && !item.url && (
             <div style={{ flex: 1, backgroundColor: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)' }}>
               <FileText size={80} color="#be185d" style={{ marginBottom: '1rem' }} />
@@ -94,6 +109,65 @@ function ItemModal({ item, onClose }: { item: any; onClose: () => void }) {
   );
 
   return createPortal(modal, document.body);
+}
+
+function ImageCarousel({ images }: { images: string[] }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const next = () => setCurrentIndex((prev) => (prev + 1) % images.length);
+  const prev = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+
+  return (
+    <div style={{ flex: 1, position: 'relative', display: 'flex', flexDirection: 'column', backgroundColor: '#1a1a1a', height: '100%' }}>
+      <div style={{ flex: 1, position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+        <img 
+          key={images[currentIndex]}
+          src={`https://drive.google.com/thumbnail?id=${images[currentIndex]}&sz=w1200`} 
+          alt={`作品 ${currentIndex + 1}`}
+          className="animate-fade-in"
+          style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }}
+        />
+        
+        <button 
+          onClick={prev}
+          style={{ position: 'absolute', left: '1rem', background: 'rgba(0,0,0,0.5)', color: 'white', border: 'none', borderRadius: '50%', padding: '0.5rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}
+        >
+          <ChevronLeft size={32} />
+        </button>
+        
+        <button 
+          onClick={next}
+          style={{ position: 'absolute', right: '1rem', background: 'rgba(0,0,0,0.5)', color: 'white', border: 'none', borderRadius: '50%', padding: '0.5rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}
+        >
+          <ChevronRight size={32} />
+        </button>
+
+        <div style={{ position: 'absolute', bottom: '1rem', right: '1rem', background: 'rgba(0,0,0,0.6)', color: 'white', padding: '0.25rem 0.75rem', borderRadius: '20px', fontSize: '0.875rem' }}>
+          {currentIndex + 1} / {images.length}
+        </div>
+      </div>
+
+      <div style={{ height: '80px', background: '#000', display: 'flex', gap: '0.5rem', padding: '0.5rem', overflowX: 'auto', borderTop: '1px solid #333' }}>
+        {images.map((id, idx) => (
+          <img 
+            key={id}
+            src={`https://drive.google.com/thumbnail?id=${id}&sz=w200`} 
+            onClick={() => setCurrentIndex(idx)}
+            style={{ 
+              height: '100%', 
+              aspectRatio: '1', 
+              objectFit: 'cover', 
+              cursor: 'pointer', 
+              opacity: currentIndex === idx ? 1 : 0.5,
+              border: currentIndex === idx ? '2px solid var(--primary)' : 'none',
+              borderRadius: '4px',
+              transition: 'opacity 0.2s'
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 function ResultCard({ item, onClick }: { item: any, onClick: () => void }) {
@@ -125,7 +199,7 @@ function ResultCard({ item, onClick }: { item: any, onClick: () => void }) {
           </div>
         )}
         
-        {item.type === 'pdf' && (
+        {(item.type === 'pdf' || item.type === 'images') && (
           <div style={{ width: '100%', height: '100%' }}>
             {item.thumbnail ? (
               <img src={item.thumbnail} alt={item.author} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -141,6 +215,7 @@ function ResultCard({ item, onClick }: { item: any, onClick: () => void }) {
           {item.type === 'youtube' && <><Play size={10} fill="currentColor" color="#ef4444" /> 影片</>}
           {item.type === 'video' && <><Play size={10} fill="currentColor" color="#ef4444" /> 影片</>}
           {item.type === 'pdf' && <><FileText size={10} color="#be185d" /> 文件</>}
+          {item.type === 'images' && <><Image size={10} color="#0369a1" /> 相簿 ({item.images.length})</>}
         </div>
       </div>
 
