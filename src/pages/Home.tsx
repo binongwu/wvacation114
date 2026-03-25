@@ -17,7 +17,7 @@ const mockData = [
   { id: 12, title: '林楷鈞', author: '林楷鈞', type: 'pdf', url: 'https://drive.google.com/file/d/1lKC_ztP1ANktJCitztlUJRUMhXM47Xdq/preview', thumbnail: '/thumbnails/lin_kai_jun.png' },
   { id: 13, title: '吳翊恩', author: '吳翊恩', type: 'pdf', url: 'https://drive.google.com/file/d/1i-69BuwcU5oJ9I-O0NY6_DZJejzBLyNU/preview', thumbnail: '/thumbnails/wu_yi_en.png' },
   { id: 14, title: '謝雅芝', author: '謝雅芝', type: 'pdf', url: 'https://drive.google.com/file/d/1Kzem1BXWtvnut-NStnt_7pimFCQuH7pd/preview', thumbnail: '/thumbnails/xie_ya_zhi.png' },
-  { id: 15, title: '范芝綾', author: '范芝綾', type: 'pdf', url: 'https://drive.google.com/file/d/1cGltoqLbk0HT4qL3F0SL5awb90JMUKVl/preview', thumbnail: '/thumbnails/fan_zhiling.png' },
+  { id: 15, title: '范芝綾', author: '范芝綾', type: 'video', url: 'https://drive.google.com/file/d/1cGltoqLbk0HT4qL3F0SL5awb90JMUKVl/preview', thumbnail: '/thumbnails/fan_zhiling.png' },
   { id: 16, title: '張芸榕', author: '張芸榕', type: 'pdf', url: 'https://drive.google.com/embeddedfolderview?id=12ncqtAM2VCBEriVbqqdFIYLjAbM4FbcE#grid', thumbnail: '/thumbnails/zhang_yun_rong.png' },
 ];
 
@@ -79,8 +79,8 @@ function ItemModal({ item, onClose }: { item: any; onClose: () => void }) {
         </div>
 
         <div style={{ flex: 1, overflow: 'hidden', backgroundColor: '#000', display: 'flex', flexDirection: 'column' }}>
-          {(item.type === 'youtube' || (item.type === 'pdf' && item.url)) && (
-            <iframe width="100%" height="100%" src={item.url.includes('youtube.com') ? `${item.url}?autoplay=1` : item.url} title={item.author} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ flex: 1 }}></iframe>
+          {(item.type === 'youtube' || item.type === 'video' || (item.type === 'pdf' && item.url)) && (
+            <iframe width="100%" height="100%" src={item.type === 'youtube' ? `${item.url}?autoplay=1` : item.url} title={item.author} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ flex: 1 }}></iframe>
           )}
           {item.type === 'pdf' && !item.url && (
             <div style={{ flex: 1, backgroundColor: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)' }}>
@@ -108,9 +108,9 @@ function ResultCard({ item, onClick }: { item: any, onClick: () => void }) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div style={{ position: 'relative', height: '180px', backgroundColor: '#f1f5f9', overflow: 'hidden' }}>
-        {item.type === 'youtube' && (
+        {(item.type === 'youtube' || item.type === 'video') && (
           <div style={{ width: '100%', height: '100%' }}>
-            {isHovered ? (
+            {(isHovered && item.type === 'youtube') ? (
               <iframe width="100%" height="100%" src={`${item.url}?autoplay=1&mute=1&controls=0&modestbranding=1`} title="預覽影片" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style={{ pointerEvents: 'none' }}></iframe>
             ) : (
               <>
@@ -139,6 +139,7 @@ function ResultCard({ item, onClick }: { item: any, onClick: () => void }) {
         
         <div style={{ position: 'absolute', top: '0.75rem', left: '0.75rem', background: 'rgba(255,255,255,0.95)', padding: '0.2rem 0.6rem', borderRadius: '20px', fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '0.25rem', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', zIndex: 10 }}>
           {item.type === 'youtube' && <><Play size={10} fill="currentColor" color="#ef4444" /> 影片</>}
+          {item.type === 'video' && <><Play size={10} fill="currentColor" color="#ef4444" /> 影片</>}
           {item.type === 'pdf' && <><FileText size={10} color="#be185d" /> 文件</>}
         </div>
       </div>
