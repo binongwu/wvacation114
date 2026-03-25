@@ -82,20 +82,30 @@ function ItemModal({ item, onClose }: { item: any; onClose: () => void }) {
       onClick={onClose}
     >
       <div
-        style={{ height: '85vh', width: 'calc(85vh * 16 / 9)', maxWidth: '92vw', backgroundColor: 'var(--surface)', borderRadius: '12px', overflow: 'hidden', display: 'flex', flexDirection: 'column', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)' }}
+        style={{ 
+          height: item.type === 'pdf' ? '82vh' : '85vh', 
+          width: item.type === 'pdf' ? 'calc(82vh * 4.1 / 3)' : 'calc(85vh * 16 / 9)', 
+          maxWidth: '95vw', 
+          backgroundColor: 'var(--surface)', 
+          borderRadius: '12px', 
+          overflow: 'hidden', 
+          display: 'flex', 
+          flexDirection: 'column', 
+          boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)' 
+        }}
         onClick={e => e.stopPropagation()}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 1.5rem', borderBottom: '1px solid var(--border)', backgroundColor: '#f8fafc', flexShrink: 0 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.8rem 1.5rem', borderBottom: '1px solid var(--border)', backgroundColor: '#fff', flexShrink: 0 }}>
           <div>
             <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-main)' }}>{item.author} 的作品</h2>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.25rem' }}>點擊視窗外背景即可關閉</p>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.1rem' }}>點擊視窗外背景即可關閉</p>
           </div>
-          <button onClick={onClose} style={{ padding: '0.5rem', backgroundColor: '#f1f5f9', borderRadius: '50%', color: 'var(--text-muted)' }}>
+          <button onClick={onClose} style={{ padding: '0.4rem', backgroundColor: '#f1f5f9', borderRadius: '50%', color: 'var(--text-muted)', transition: 'all 0.2s' }}>
             <X size={24} />
           </button>
         </div>
 
-        <div style={{ flex: 1, overflow: 'hidden', backgroundColor: '#000', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ flex: 1, overflow: 'hidden', backgroundColor: item.type === 'pdf' ? '#fff' : '#000', display: 'flex', flexDirection: 'column' }}>
           {(item.type === 'youtube' || item.type === 'video' || (item.type === 'pdf' && item.url)) && (
             <iframe width="100%" height="100%" src={item.type === 'youtube' ? `${item.url}?autoplay=1` : item.url} title={item.author} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ flex: 1 }}></iframe>
           )}
