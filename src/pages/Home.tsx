@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { FileText, Play, X, Image, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const mockData = [
+  { id: 17, title: '周翊騰', author: '周翊騰', type: 'youtube', url: 'https://www.youtube.com/embed/4vnY-n7oGZU', thumbnail: 'https://img.youtube.com/vi/4vnY-n7oGZU/maxresdefault.jpg' },
   { id: 1, title: '蔡芷柔', author: '蔡芷柔', type: 'youtube', url: 'https://www.youtube.com/embed/Jc7vIIAE0QY', thumbnail: 'https://img.youtube.com/vi/Jc7vIIAE0QY/maxresdefault.jpg' },
   { id: 2, title: '王晨佑', author: '王晨佑', type: 'youtube', url: 'https://www.youtube.com/embed/4ecV8HiXgv0', thumbnail: 'https://img.youtube.com/vi/4ecV8HiXgv0/maxresdefault.jpg' },
   { id: 3, title: '陳韋豪', author: '陳韋豪', type: 'youtube', url: 'https://www.youtube.com/embed/yaGB5BItwbY', thumbnail: 'https://img.youtube.com/vi/yaGB5BItwbY/maxresdefault.jpg' },
@@ -10,13 +11,13 @@ const mockData = [
   { id: 5, title: '徐維蔓', author: '徐維蔓', type: 'youtube', url: 'https://www.youtube.com/embed/kH4mA3XPJNE', thumbnail: 'https://img.youtube.com/vi/kH4mA3XPJNE/maxresdefault.jpg' },
   { id: 6, title: '謝棋芝', author: '謝棋芝', type: 'pdf', url: 'https://docs.google.com/presentation/d/1GTGsMJTQQIn6T7uurkR3jckq4GKqER4lx6GF_KwZZl8/embed', thumbnail: '/thumbnails/xie_qizhi.png' },
   { id: 7, title: '王沂安', author: '王沂安', type: 'pdf', url: 'https://drive.google.com/file/d/16WuDowQyYpsRk3Qbt5NvyDqVJLgmHG9L/preview', thumbnail: '/thumbnails/wang_yian.png' },
+  { id: 14, title: '謝雅芝', author: '謝雅芝', type: 'pdf', url: 'https://docs.google.com/presentation/d/1h4wB3i3dSriwQo4YbhFzT4AJ-gNDPoUZmN1FKtCNkp4/embed', thumbnail: '/thumbnails/xie_ya_zhi.png' },
   { id: 8, title: '張人杰', author: '張人杰', type: 'pdf', url: 'https://drive.google.com/file/d/1IRESRPAj0do0FjJEWs9UcNkY7kOXGamC/preview', thumbnail: '/thumbnails/zhang_renjie.png' },
   { id: 9, title: '許睿旂', author: '許睿旂', type: 'pdf', url: 'https://drive.google.com/file/d/1cM1zcm5Jo-d2IpAL4on8EwuK0figzNF2/preview', thumbnail: '/thumbnails/xu_ruiqi.png' },
   { id: 10, title: '陳崇名', author: '陳崇名', type: 'pdf', url: 'https://drive.google.com/file/d/17Hy0x18ihbFmTrWRzxRwycQ4tljfY4cc/preview', thumbnail: '/thumbnails/chen_chongming.png' },
   { id: 11, title: '李承翰', author: '李承翰', type: 'pdf', url: 'https://drive.google.com/file/d/1shxMYmXA-zKSd2Ua88OBqhjmWtgjMobP/preview', thumbnail: '/thumbnails/li_chen_han.png' },
   { id: 12, title: '林楷鈞', author: '林楷鈞', type: 'pdf', url: 'https://drive.google.com/file/d/1lKC_ztP1ANktJCitztlUJRUMhXM47Xdq/preview', thumbnail: '/thumbnails/lin_kai_jun.png' },
   { id: 13, title: '吳翊恩', author: '吳翊恩', type: 'pdf', url: 'https://drive.google.com/file/d/1i-69BuwcU5oJ9I-O0NY6_DZJejzBLyNU/preview', thumbnail: '/thumbnails/wu_yi_en.png' },
-  { id: 14, title: '謝雅芝', author: '謝雅芝', type: 'pdf', url: 'https://docs.google.com/presentation/d/1h4wB3i3dSriwQo4YbhFzT4AJ-gNDPoUZmN1FKtCNkp4/embed', thumbnail: '/thumbnails/xie_ya_zhi.png' },
   { id: 15, title: '范芝綾', author: '范芝綾', type: 'video', url: 'https://drive.google.com/file/d/1cGltoqLbk0HT4qL3F0SL5awb90JMUKVl/preview', thumbnail: '/thumbnails/fan_zhiling.png' },
   { 
     id: 16, 
@@ -33,7 +34,6 @@ const mockData = [
       '1KYA1h13uYS39iqMnznrxuvS-JqrS1Jeh', '1j3CZ-PbQ7D1ZsHYxQBoz0dNXLiu0P4Od'
     ]
   },
-  { id: 17, title: '周翊騰', author: '周翊騰', type: 'youtube', url: 'https://www.youtube.com/embed/4vnY-n7oGZU', thumbnail: 'https://img.youtube.com/vi/4vnY-n7oGZU/maxresdefault.jpg' },
 ];
 
 export default function Home() {
