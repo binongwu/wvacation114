@@ -8,17 +8,17 @@ const mockData = [
   { id: 3, title: '陳韋豪', author: '陳韋豪', type: 'youtube', url: 'https://www.youtube.com/embed/yaGB5BItwbY', thumbnail: 'https://img.youtube.com/vi/yaGB5BItwbY/maxresdefault.jpg' },
   { id: 4, title: '王晨希', author: '王晨希', type: 'youtube', url: 'https://www.youtube.com/embed/nvxBSqrd2Rw', thumbnail: 'https://img.youtube.com/vi/nvxBSqrd2Rw/maxresdefault.jpg' },
   { id: 5, title: '徐維蔓', author: '徐維蔓', type: 'youtube', url: 'https://www.youtube.com/embed/kH4mA3XPJNE', thumbnail: 'https://img.youtube.com/vi/kH4mA3XPJNE/maxresdefault.jpg' },
-  { id: 6, title: '謝棋芝', author: '謝棋芝', type: 'pdf', url: 'https://drive.google.com/file/d/17Q3hswK9aCucooAsxGwLsvFvTpXfhnmy/preview' },
-  { id: 7, title: '王沂安', author: '王沂安', type: 'pdf', url: 'https://drive.google.com/file/d/16WuDowQyYpsRk3Qbt5NvyDqVJLgmHG9L/preview' },
-  { id: 8, title: '張人杰', author: '張人杰', type: 'pdf', url: 'https://drive.google.com/file/d/1IRESRPAj0do0FjJEWs9UcNkY7kOXGamC/preview' },
-  { id: 9, title: '許睿旂', author: '許睿旂', type: 'pdf', url: 'https://drive.google.com/file/d/1cM1zcm5Jo-d2IpAL4on8EwuK0figzNF2/preview' },
-  { id: 10, title: '陳崇名', author: '陳崇名', type: 'pdf', url: 'https://drive.google.com/file/d/17Hy0x18ihbFmTrWRzxRwycQ4tljfY4cc/preview' },
-  { id: 11, title: '李承翰', author: '李承翰', type: 'pdf', url: 'https://drive.google.com/file/d/1shxMYmXA-zKSd2Ua88OBqhjmWtgjMobP/preview' },
-  { id: 12, title: '林楷鈞', author: '林楷鈞', type: 'pdf', url: 'https://drive.google.com/file/d/1lKC_ztP1ANktJCitztlUJRUMhXM47Xdq/preview' },
-  { id: 13, title: '吳翊恩', author: '吳翊恩', type: 'pdf', url: 'https://drive.google.com/file/d/1i-69BuwcU5oJ9I-O0NY6_DZJejzBLyNU/preview' },
-  { id: 14, title: '謝雅芝', author: '謝雅芝', type: 'pdf', url: 'https://drive.google.com/file/d/1Kzem1BXWtvnut-NStnt_7pimFCQuH7pd/preview' },
-  { id: 15, title: '范芝綾', author: '范芝綾', type: 'pdf', url: 'https://drive.google.com/file/d/1cGltoqLbk0HT4qL3F0SL5awb90JMUKVl/preview' },
-  { id: 16, title: '張芸榕', author: '張芸榕', type: 'pdf', url: 'https://drive.google.com/embeddedfolderview?id=12ncqtAM2VCBEriVbqqdFIYLjAbM4FbcE#grid' },
+  { id: 6, title: '謝棋芝', author: '謝棋芝', type: 'pdf', url: 'https://drive.google.com/file/d/17Q3hswK9aCucooAsxGwLsvFvTpXfhnmy/preview', thumbnail: '/thumbnails/xie_qizhi.png' },
+  { id: 7, title: '王沂安', author: '王沂安', type: 'pdf', url: 'https://drive.google.com/file/d/16WuDowQyYpsRk3Qbt5NvyDqVJLgmHG9L/preview', thumbnail: '/thumbnails/wang_yian.png' },
+  { id: 8, title: '張人杰', author: '張人杰', type: 'pdf', url: 'https://drive.google.com/file/d/1IRESRPAj0do0FjJEWs9UcNkY7kOXGamC/preview', thumbnail: '/thumbnails/zhang_renjie.png' },
+  { id: 9, title: '許睿旂', author: '許睿旂', type: 'pdf', url: 'https://drive.google.com/file/d/1cM1zcm5Jo-d2IpAL4on8EwuK0figzNF2/preview', thumbnail: '/thumbnails/xu_ruiqi.png' },
+  { id: 10, title: '陳崇名', author: '陳崇名', type: 'pdf', url: 'https://drive.google.com/file/d/17Hy0x18ihbFmTrWRzxRwycQ4tljfY4cc/preview', thumbnail: '/thumbnails/chen_chongming.png' },
+  { id: 11, title: '李承翰', author: '李承翰', type: 'pdf', url: 'https://drive.google.com/file/d/1shxMYmXA-zKSd2Ua88OBqhjmWtgjMobP/preview', thumbnail: '/thumbnails/li_chen_han.png' },
+  { id: 12, title: '林楷鈞', author: '林楷鈞', type: 'pdf', url: 'https://drive.google.com/file/d/1lKC_ztP1ANktJCitztlUJRUMhXM47Xdq/preview', thumbnail: '/thumbnails/lin_kai_jun.png' },
+  { id: 13, title: '吳翊恩', author: '吳翊恩', type: 'pdf', url: 'https://drive.google.com/file/d/1i-69BuwcU5oJ9I-O0NY6_DZJejzBLyNU/preview', thumbnail: '/thumbnails/wu_yi_en.png' },
+  { id: 14, title: '謝雅芝', author: '謝雅芝', type: 'pdf', url: 'https://drive.google.com/file/d/1Kzem1BXWtvnut-NStnt_7pimFCQuH7pd/preview', thumbnail: '/thumbnails/xie_ya_zhi.png' },
+  { id: 15, title: '范芝綾', author: '范芝綾', type: 'pdf', url: 'https://drive.google.com/file/d/1cGltoqLbk0HT4qL3F0SL5awb90JMUKVl/preview', thumbnail: '/thumbnails/fan_zhiling.png' },
+  { id: 16, title: '張芸榕', author: '張芸榕', type: 'pdf', url: 'https://drive.google.com/embeddedfolderview?id=12ncqtAM2VCBEriVbqqdFIYLjAbM4FbcE#grid', thumbnail: '/thumbnails/zhang_yun_rong.png' },
 ];
 
 export default function Home() {
@@ -125,9 +125,19 @@ function ResultCard({ item, onClick }: { item: any, onClick: () => void }) {
           </div>
         )}
         
-        {item.type === 'pdf' && <div style={{ display: 'flex', height: '100%', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%)' }}><FileText size={60} color="#be185d" strokeWidth={1.5} /></div>}
+        {item.type === 'pdf' && (
+          <div style={{ width: '100%', height: '100%' }}>
+            {item.thumbnail ? (
+              <img src={item.thumbnail} alt={item.author} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            ) : (
+              <div style={{ display: 'flex', height: '100%', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%)' }}>
+                <FileText size={60} color="#be185d" strokeWidth={1.5} />
+              </div>
+            )}
+          </div>
+        )}
         
-        <div style={{ position: 'absolute', top: '0.75rem', left: '0.75rem', background: 'rgba(255,255,255,0.95)', padding: '0.2rem 0.6rem', borderRadius: '20px', fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '0.25rem', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+        <div style={{ position: 'absolute', top: '0.75rem', left: '0.75rem', background: 'rgba(255,255,255,0.95)', padding: '0.2rem 0.6rem', borderRadius: '20px', fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '0.25rem', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', zIndex: 10 }}>
           {item.type === 'youtube' && <><Play size={10} fill="currentColor" color="#ef4444" /> 影片</>}
           {item.type === 'pdf' && <><FileText size={10} color="#be185d" /> 文件</>}
         </div>
