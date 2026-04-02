@@ -34,17 +34,17 @@ const mockData = [
     '1IXHacjkVoyFzAPuRR57T-7apAbfzqJ5P'
   ] },
   { id: 18, title: '邱柏鈞', author: '邱柏鈞', type: 'video', url: 'https://drive.google.com/file/d/1EQ5WW9IsLPIgc69biLTZ1ZN7uVi-U6Nu/preview', thumbnail: '/thumbnails/qiu_bo_jun.png' },
-  { id: 19, title: '周妤臻', author: '周妤臻', type: 'pdf', url: 'https://drive.google.com/file/d/1uF-n84gS9Y_9r5o2S8S7Wz8Kk9L6p3gK/preview', thumbnail: '/thumbnails/zhou_yu_zhen.png' },
-  { id: 20, title: '馬頤中', author: '馬頤中', type: 'pdf', url: 'https://drive.google.com/file/d/1seAyex6WNo2xkbK0UKGpvDzLB1gsbIq7/preview', thumbnail: '/thumbnails/ma_yi_zhong.png' },
-  { id: 21, title: '林宥任', author: '林宥任', type: 'pdf', url: 'https://drive.google.com/file/d/1NVjjvxd_zjVshVu3jQBvRiJ7qt-scSQY/preview', thumbnail: '/thumbnails/lin_you_ren.png' },
-  { id: 22, title: '華紹硯', author: '華紹硯', type: 'pdf', url: 'https://drive.google.com/file/d/1DweB-zApyFmwvZt_uNjpiZj05po1_ocM/preview', thumbnail: '/thumbnails/hua_shao_yan.png' },
-  { id: 23, title: '邱柏翔', author: '邱柏翔', type: 'pdf', url: 'https://drive.google.com/file/d/1KSTNhzBDjIKEe0q4Kl8ce_czjg8wLZ_U/preview', thumbnail: '/thumbnails/qiu_bo_xiang.png' },
-  { id: 24, title: '華紹帆', author: '華紹帆', type: 'pdf', url: 'https://drive.google.com/file/d/1qbEUwJ0X8nxiMr7GZeTqfhfPHXDYw2Aa/preview', thumbnail: '/thumbnails/hua_shao_fan.png' },
-  { id: 25, title: '楊銥諠', author: '楊銥諠', type: 'pdf', url: 'https://drive.google.com/file/d/1SK-rgDPQVgVM2z1XNekjNAdwPUcJ9-Dk/preview', thumbnail: '/thumbnails/yang_yi_xuan.png' },
-  { id: 26, title: '陳妤宣', author: '陳妤宣', type: 'pdf', url: 'https://drive.google.com/file/d/16CoZzldIW7i1gOxhnY885YfTN11Rk3uJ/preview', thumbnail: '/thumbnails/chen_yu_xuan.png' },
-  { id: 27, title: '劉芷安', author: '劉芷安', type: 'pdf', url: 'https://drive.google.com/file/d/1ioEaEiwh-bklb8SzT0crYvqywQkeQ2eJ/preview', thumbnail: '/thumbnails/liu_zhi_an.png' },
-  { id: 28, title: '馬頤菲', author: '馬頤菲', type: 'pdf', url: 'https://drive.google.com/file/d/1T7iX-Cb4V63SEAlPwDoleGEu3aqVZwyy/preview', thumbnail: '/thumbnails/ma_yi_fei.png' },
-  { id: 29, title: '連晨希', author: '連晨希', type: 'pdf', url: 'https://drive.google.com/file/d/1kGASNMECmdpBJdX0CkNH7e42msERod27/preview', thumbnail: '/thumbnails/lian_chen_xi.png' }
+  { id: 19, title: '吳忠陽', author: '吳忠陽', type: 'video', url: 'https://drive.google.com/file/d/1jxUgyCWnmNxnYdO8gBeIEOqEK96L-tkt/preview', thumbnail: 'https://drive.google.com/thumbnail?id=1jxUgyCWnmNxnYdO8gBeIEOqEK96L-tkt&sz=w800' },
+  { id: 20, title: '馬頤中', author: '馬頤中', type: 'pdf', url: 'https://drive.google.com/file/d/1seAyex6WNo2xkbK0UKGpvDzLB1gsbIq7/preview', thumbnail: 'https://drive.google.com/thumbnail?id=1seAyex6WNo2xkbK0UKGpvDzLB1gsbIq7&sz=w800' },
+  { id: 21, title: '林宥任', author: '林宥任', type: 'pdf', url: 'https://drive.google.com/file/d/1NVjjvxd_zjVshVu3jQBvRiJ7qt-scSQY/preview', thumbnail: 'https://drive.google.com/thumbnail?id=1NVjjvxd_zjVshVu3jQBvRiJ7qt-scSQY&sz=w800' },
+  { id: 22, title: '華紹硯', author: '華紹硯', type: 'pdf', url: 'https://drive.google.com/file/d/1DweB-zApyFmwvZt_uNjpiZj05po1_ocM/preview', thumbnail: 'https://drive.google.com/thumbnail?id=1DweB-zApyFmwvZt_uNjpiZj05po1_ocM&sz=w800' },
+  { id: 23, title: '邱柏翔', author: '邱柏翔', type: 'pdf', url: 'https://drive.google.com/file/d/1KSTNhzBDjIKEe0q4Kl8ce_czjg8wLZ_U/preview', thumbnail: 'https://drive.google.com/thumbnail?id=1KSTNhzBDjIKEe0q4Kl8ce_czjg8wLZ_U&sz=w800' },
+  { id: 24, title: '華紹帆', author: '華紹帆', type: 'pdf', url: 'https://drive.google.com/file/d/1qbEUwJ0X8nxiMr7GZeTqfhfPHXDYw2Aa/preview', thumbnail: 'https://drive.google.com/thumbnail?id=1qbEUwJ0X8nxiMr7GZeTqfhfPHXDYw2Aa&sz=w800' },
+  { id: 25, title: '楊銥諠', author: '楊銥諠', type: 'pdf', url: 'https://drive.google.com/file/d/1SK-rgDPQVgVM2z1XNekjNAdwPUcJ9-Dk/preview', thumbnail: 'https://drive.google.com/thumbnail?id=1SK-rgDPQVgVM2z1XNekjNAdwPUcJ9-Dk&sz=w800' },
+  { id: 26, title: '陳妤宣', author: '陳妤宣', type: 'pdf', url: 'https://drive.google.com/file/d/16CoZzldIW7i1gOxhnY885YfTN11Rk3uJ/preview', thumbnail: 'https://drive.google.com/thumbnail?id=16CoZzldIW7i1gOxhnY885YfTN11Rk3uJ&sz=w800' },
+  { id: 27, title: '劉芷安', author: '劉芷安', type: 'pdf', url: 'https://drive.google.com/file/d/1ioEaEiwh-bklb8SzT0crYvqywQkeQ2eJ/preview', thumbnail: 'https://drive.google.com/thumbnail?id=1ioEaEiwh-bklb8SzT0crYvqywQkeQ2eJ&sz=w800' },
+  { id: 28, title: '馬頤菲', author: '馬頤菲', type: 'pdf', url: 'https://drive.google.com/file/d/1T7iX-Cb4V63SEAlPwDoleGEu3aqVZwyy/preview', thumbnail: 'https://drive.google.com/thumbnail?id=1T7iX-Cb4V63SEAlPwDoleGEu3aqVZwyy&sz=w800' },
+  { id: 29, title: '連晨希', author: '連晨希', type: 'pdf', url: 'https://drive.google.com/file/d/1kGASNMECmdpBJdX0CkNH7e42msERod27/preview', thumbnail: 'https://drive.google.com/thumbnail?id=1kGASNMECmdpBJdX0CkNH7e42msERod27&sz=w800' }
 ];
 
 export default function Home() {
