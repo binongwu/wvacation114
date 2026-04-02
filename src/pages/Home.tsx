@@ -19,21 +19,20 @@ const mockData = [
   { id: 12, title: '林楷鈞', author: '林楷鈞', type: 'pdf', url: 'https://drive.google.com/file/d/1oYYC4APrRQuwZ5qH26W0bqm7mJCpx_wl/preview', thumbnail: '/thumbnails/lin_kai_jun.png' },
   { id: 13, title: '吳翊恩', author: '吳翊恩', type: 'pdf', url: 'https://drive.google.com/file/d/1i-69BuwcU5oJ9I-O0NY6_DZJejzBLyNU/preview', thumbnail: '/thumbnails/wu_yi_en.png' },
   { id: 15, title: '范芝綾', author: '范芝綾', type: 'video', url: 'https://drive.google.com/file/d/1cGltoqLbk0HT4qL3F0SL5awb90JMUKVl/preview', thumbnail: '/thumbnails/fan_zhiling.png' },
-  { 
-    id: 16, 
-    title: '張芸榕', 
-    author: '張芸榕', 
-    type: 'images', 
-    thumbnail: '/thumbnails/zhang_yun_rong.png',
-    images: [
-      '1_vLPRmnCZiitQdo_qo5D2WSEWx6aSr9q', '14s_cHljOmJ_UY-iRTZXKKBZvDuI1jMAv', '1raJ63Av2SxQ4TPs5eaz524Kxv1zODz3l', '1SVcgokoRmwP8XXAJ7TppQ-wEwI9sw8hf',
-      '1RMNqHa1KlWWCe8NRYVs7nPwQRzMt0DeI', '1TJFr3Wfp4Q2Tws3wrjUug4cPL5VDQXb2', '1H8TnV3eNuuESEkjXurWrfVugIzlPmXca', '1vigSGCFMDUshvaQcNUb-XpOk5Wb33PXl',
-      '1i9wCGT3wdMauuaSl7kXvllNgQpiria6l', '1FEk6KayKLWgwxBwzGMtWTd96WjuI4V5E', '1eOTDonLv7GEyMoovo86LJ7NMAguUPi_t', '1IXHacjkVoyFzAPuRR57T-7apAbfzqJ5P',
-      '1WxU-v02b4PPxjXSSd2AXfghAm9KK6kzc', '1bHilY20HsN0z4m0LnI5WZYK30Y6MhT7B', '1tppyobOyo_V732kAGyWThub1lQiR0lac', '1lxKs-ctqnmf56yuESm8rSTOvGwxNa3LY',
-      '1Xb3iP2vjpLWKvEJU1LAcwf-OliOFuJRK', '1nXquFfzSezIfRFMHrEIqwAafMrOJzzpn', '1qU7mGYKJ0sGdqDmgXvyW7y_KYMH3a0Kg', '1TpsYIQOiFuEXBDoAqSDKl8YPiEvI1t6P',
-      '1KYA1h13uYS39iqMnznrxuvS-JqrS1Jeh', '1j3CZ-PbQ7D1ZsHYxQBoz0dNXLiu0P4Od'
-    ]
-  },
+  { id: 16, title: '張芸榕', author: '張芸榕', type: 'images', thumbnail: '/thumbnails/zhang_yun_rong.png', images: [
+    '1_vLPRmnCZiitQdo_qo5D2WSEWx6aSr9q',
+    '14s_cHljOmJ_UY-iRTZXKKBZvDuI1jMAv',
+    '1raJ63Av2SxQ4TPs5eaz524Kxv1zODz3l',
+    '1SVcgokoRmwP8XXAJ7TppQ-wEwI9sw8hf',
+    '1RMNqHa1KlWWCe8NRYVs7nPwQRzMt0DeI',
+    '1TJFr3Wfp4Q2Tws3wrjUug4cPL5VDQXb2',
+    '1H8TnV3eNuuESEkjXurWrfVugIzlPmXca',
+    '1vigSGCFMDUshvaQcNUb-XpOk5Wb33PXl',
+    '1i9wCGT3wdMauuaSl7kXvllNgQpiria6l',
+    '1FEk6KayKLWgwxBwzGMtWTd96WjuI4V5E',
+    '1eOTDonLv7GEyMoovo86LJ7NMAguUPi_t',
+    '1IXHacjkVoyFzAPuRR57T-7apAbfzqJ5P'
+  ] },
   { id: 18, title: '邱柏鈞', author: '邱柏鈞', type: 'video', url: 'https://drive.google.com/file/d/1EQ5WW9IsLPIgc69biLTZ1ZN7uVi-U6Nu/preview', thumbnail: '/thumbnails/qiu_bo_jun.png' },
   { id: 19, title: '周妤臻', author: '周妤臻', type: 'pdf', url: 'https://drive.google.com/file/d/1uF-n84gS9Y_9r5o2S8S7Wz8Kk9L6p3gK/preview', thumbnail: '/thumbnails/zhou_yu_zhen.png' },
   { id: 20, title: '馬頤中', author: '馬頤中', type: 'pdf', url: 'https://drive.google.com/file/d/1seAyex6WNo2xkbK0UKGpvDzLB1gsbIq7/preview', thumbnail: '/thumbnails/ma_yi_zhong.png' },
@@ -45,9 +44,8 @@ const mockData = [
   { id: 26, title: '陳妤宣', author: '陳妤宣', type: 'pdf', url: 'https://drive.google.com/file/d/16CoZzldIW7i1gOxhnY885YfTN11Rk3uJ/preview', thumbnail: '/thumbnails/chen_yu_xuan.png' },
   { id: 27, title: '劉芷安', author: '劉芷安', type: 'pdf', url: 'https://drive.google.com/file/d/1ioEaEiwh-bklb8SzT0crYvqywQkeQ2eJ/preview', thumbnail: '/thumbnails/liu_zhi_an.png' },
   { id: 28, title: '馬頤菲', author: '馬頤菲', type: 'pdf', url: 'https://drive.google.com/file/d/1T7iX-Cb4V63SEAlPwDoleGEu3aqVZwyy/preview', thumbnail: '/thumbnails/ma_yi_fei.png' },
-  { id: 29, title: '連晨希', author: '連晨希', type: 'pdf', url: 'https://drive.google.com/file/d/1kGASNMECmdpBJdX0CkNH7e42msERod27/preview', thumbnail: '/thumbnails/lian_chen_xi.png' },
+  { id: 29, title: '連晨希', author: '連晨希', type: 'pdf', url: 'https://drive.google.com/file/d/1kGASNMECmdpBJdX0CkNH7e42msERod27/preview', thumbnail: '/thumbnails/lian_chen_xi.png' }
 ];
-
 
 export default function Home() {
   const [selectedItem, setSelectedItem] = useState<any | null>(null);
