@@ -44,7 +44,7 @@ const mockData = [
   { id: 26, title: '陳妤宣', author: '陳妤宣', type: 'pdf', url: 'https://drive.google.com/file/d/16CoZzldIW7i1gOxhnY885YfTN11Rk3uJ/preview', thumbnail: 'https://drive.google.com/thumbnail?id=16CoZzldIW7i1gOxhnY885YfTN11Rk3uJ&sz=w800' },
   { id: 27, title: '劉芷安', author: '劉芷安', type: 'pdf', url: 'https://drive.google.com/file/d/1ioEaEiwh-bklb8SzT0crYvqywQkeQ2eJ/preview', thumbnail: 'https://drive.google.com/thumbnail?id=1ioEaEiwh-bklb8SzT0crYvqywQkeQ2eJ&sz=w800' },
   { id: 28, title: '馬頤菲', author: '馬頤菲', type: 'pdf', url: 'https://drive.google.com/file/d/1T7iX-Cb4V63SEAlPwDoleGEu3aqVZwyy/preview', thumbnail: 'https://drive.google.com/thumbnail?id=1T7iX-Cb4V63SEAlPwDoleGEu3aqVZwyy&sz=w800' },
-  { id: 29, title: '連晨希', author: '連晨希', type: 'canva', url: 'https://www.canva.com/design/DAHGco2QlNM/fkehDLZu1-8mL3QWde-s2w/view?embed', thumbnail: 'https://drive.google.com/thumbnail?id=1kGASNMECmdpBJdX0CkNH7e42msERod27&sz=w800' },
+  { id: 29, title: '連晨希', author: '連晨希', type: 'canva', url: 'https://www.canva.com/design/DAHGco2QlNM/fkehDLZu1-8mL3QWde-s2w/view?embed', thumbnail: 'https://www.canva.com/design/DAHGco2QlNM/fkehDLZu1-8mL3QWde-s2w/screen' },
 ];
 
 export default function Home() {
